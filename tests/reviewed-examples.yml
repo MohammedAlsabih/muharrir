@@ -1,0 +1,78 @@
+version: 0.2.0
+tests:
+- id: T001
+  rule: MHR-C002
+  input: يعمل خالد كمدير للمشروع.
+  mode: suggest
+  expected: يعمل خالد مديرًا للمشروع.
+  approved: true
+- id: T002
+  rule: MHR-C007
+  input: التخطيط والتطوير والتنفيذ والمتابعة والقياس والتحسين
+  mode: rewrite
+  expected: التخطيط، والتطوير، والتنفيذ، والمتابعة، والقياس، والتحسين.
+  approved: true
+- id: T003
+  rule: MHR-C009
+  input: أبرز التحديات
+  context: عنوان شريحة تحليلية تتناول تداخل المسؤوليات وتعدد القنوات وضعف التكامل
+  mode: suggest
+  expected: تتركز التحديات الرئيسة في تداخل المسؤوليات، وتعدد قنوات الخدمة، وضعف تكامل البيانات بين الأنظمة.
+  approved: true
+- id: T004
+  rule: MHR-C010
+  input: يرجى إدخال رقم الهوية.
+  context: واجهة رقمية
+  mode: rewrite
+  expected: أدخل رقم الهوية.
+  approved: true
+- id: T005
+  rule: MHR-C010
+  input: يرجى موافاتنا بالوثائق المطلوبة.
+  context: مراسلة مهنية مهذبة
+  mode: rewrite
+  expected: نأمل موافاتنا بالوثائق المطلوبة.
+  approved: true
+- id: T006
+  rule: MHR-C012
+  input: لا إجراءات متاحة.
+  context: حالة فارغة في واجهة
+  mode: suggest
+  expected: لا توجد إجراءات متاحة.
+  approved: true
+- id: T007
+  rule: MHR-C021
+  input: نحتاج إلى معرفة متى يبدأ المشروع.
+  mode: rewrite
+  expected: نحتاج إلى معرفة وقت بدء المشروع.
+  approved: true
+- id: T008
+  rule: MHR-C021
+  input: لا أعلم هل اعتمدت اللجنة التقرير.
+  mode: suggest
+  expected: لا أعلم شيئا عن اعتماد اللجنة للتقرير.
+  approved: true
+- id: T009
+  rule: MHR-C029
+  input: أرسلت الإدارة التقرير إلى اللجنة بعد مراجعته.
+  mode: review
+  expected_action: no_change
+  approved: true
+- id: T010
+  rule: MHR-C029
+  input: أخبرت سارة نورة أن طلبها اعتمد.
+  mode: review
+  expected_action: flag_ambiguity
+  approved: true
+- id: T011
+  rule: MHR-C022
+  input: السياسة الوطنية للغة العربية
+  mode: review
+  expected_action: no_diacritics_added
+  approved: true
+- id: T012
+  rule: MHR-C025
+  input: شملت الدراسة 27 جهة، وانخفض زمن المعالجة بنسبة 18%.
+  mode: rewrite
+  expected_action: preserve_facts_exactly
+  approved: true

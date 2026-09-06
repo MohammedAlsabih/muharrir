@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Muharrir Core Rule",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "judgement",
+    "scope",
+    "status",
+    "description",
+    "examples",
+    "sources"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^MHR-C\\d{3}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "judgement": {
+      "enum": [
+        "error",
+        "prefer",
+        "review",
+        "style",
+        "guardrail"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "deprecated"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "examples": {
+      "type": "object",
+      "required": [
+        "review",
+        "preferred",
+        "must_not_change"
+      ],
+      "properties": {
+        "review": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preferred": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_not_change": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

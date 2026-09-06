@@ -1,0 +1,567 @@
+version: 0.2.0
+default_mode: review
+rule_count: 35
+rules:
+- id: MHR-C001
+  title: ابن الجملة بالعربية لا على قالب اللغة الأصلية
+  judgement: review
+  scope: general
+  status: approved
+  description: إذا ظهر أثر ترتيب أو تركيب أجنبي، افهم المعنى ثم أعد بناء الجملة بالعربية. لا تعتبر كل تشابه مع الإنجليزية
+    خطأ.
+  examples:
+    review:
+    - هذا يعمل من أجل تحسين التجربة
+    preferred:
+    - هذا يحسن التجربة
+    must_not_change:
+    - أخذ الموظف الملف بيده
+  sources:
+  - GASTAT-editorial
+- id: MHR-C002
+  title: لا تستخدم الكاف تلقائيا مقابل as الدالة على الوظيفة
+  judgement: prefer
+  scope: translation
+  status: approved
+  description: إذا دلت الكاف على وظيفة أو صفة منقولة من as، فضل الحال أو الفعل المباشر أو صياغة عربية طبيعية.
+  examples:
+    review:
+    - يعمل خالد كمدير للمشروع
+    - تستخدم الصفحة كواجهة لإدارة الطلبات
+    preferred:
+    - يعمل خالد مديرًا للمشروع
+    - تستخدم الصفحة لإدارة الطلبات
+    must_not_change:
+    - كان ثابتًا كالجبل
+  sources:
+  - KSAA-prepositions
+- id: MHR-C003
+  title: تجنب «من قبل» إذا أمكن إسناد الفعل مباشرة إلى فاعله
+  judgement: prefer
+  scope: translation
+  status: approved
+  description: في البناء المتأثر بالمبني للمجهول الإنجليزي، أسند الفعل إلى الفاعل المعروف إذا لم يتغير المعنى.
+  examples:
+    review:
+    - تمت مراجعة الطلب من قبل الفريق
+    preferred:
+    - راجع الفريق الطلب
+    must_not_change:
+    - جرى اعتماد القرار أمس
+  sources:
+  - GASTAT-editorial
+- id: MHR-C004
+  title: راجع الإفراط في «بشكل» و«بصورة»
+  judgement: prefer
+  scope: style
+  status: approved
+  description: اقترح ظرفا أو صفة أبسط عندما يكون المعنى نفسه، ولا تطبق القاعدة على «على شكل» بمعنى الهيئة.
+  examples:
+    review:
+    - يعمل النظام بشكل مستمر
+    - ظهرت النتيجة بصورة واضحة
+    preferred:
+    - يعمل النظام باستمرار
+    - ظهرت النتيجة بوضوح
+    must_not_change:
+    - ظهر الشعار على شكل دائرة
+  sources:
+  - GASTAT-editorial
+- id: MHR-C005
+  title: راجع التراكيب الوسيطة الثقيلة
+  judgement: review
+  scope: style
+  status: approved
+  description: راجع «تم + مصدر»، و«قام بـ + مصدر»، و«من خلال» عندما يكون الفعل المباشر أو التركيب الأقصر أوضح. لا تمنعها مطلقا.
+  examples:
+    review:
+    - قام الفريق بإعداد التقرير
+    - تم البدء في التنفيذ
+    - رفع الكفاءة من خلال استخدام التقنية
+    preferred:
+    - أعد الفريق التقرير
+    - بدأ التنفيذ
+    - رفع الكفاءة باستخدام التقنية
+    must_not_change:
+    - تم العثور على المستند
+    - مر الضوء من خلال النافذة
+  sources:
+  - internal-style
+- id: MHR-C006
+  title: راجع تراكم المصادر والأسماء المعطوفة
+  judgement: review
+  scope: style
+  status: approved
+  description: إذا تراكمت المصادر أو الأسماء بحيث يصعب تتبع العلاقة، أعد توزيعها على أفعال أو مكونات أوضح.
+  examples:
+    review:
+    - تطوير وتحسين ورفع كفاءة وتنظيم ومتابعة الخدمات
+    preferred:
+    - تطوير الخدمات وتحسينها ورفع كفاءة إدارتها ومتابعتها
+    must_not_change:
+    - الحقوق والواجبات
+    - التخطيط والتنفيذ
+  sources:
+  - GASTAT-editorial
+- id: MHR-C007
+  title: افصل عناصر التعداد المتعدد بالفواصل
+  judgement: prefer
+  scope: punctuation
+  status: approved
+  description: في التعداد المتعدد، استخدم الفاصلة بين العناصر مع واو العطف حيث يلزم، ولا تفصل التراكيب الثنائية المستقرة.
+  examples:
+    review:
+    - التخطيط والتطوير والتنفيذ والمتابعة والقياس والتحسين
+    preferred:
+    - التخطيط، والتطوير، والتنفيذ، والمتابعة، والقياس، والتحسين.
+    must_not_change:
+    - الحقوق والواجبات
+  sources:
+  - GASTAT-editorial
+- id: MHR-C008
+  title: احذف المقدمة إذا لم تضف معنى
+  judgement: prefer
+  scope: style
+  status: approved
+  description: راجع المقدمات من نوع «تجدر الإشارة» و«في هذا الصدد» و«في إطار»؛ احذفها إذا بقي المعنى كاملا.
+  examples:
+    review:
+    - تجدر الإشارة إلى أن المشروع اكتمل في أغسطس
+    preferred:
+    - اكتمل المشروع في أغسطس.
+    must_not_change:
+    - في إطار الاتفاقية الموقعة بين الطرفين، تلتزم الشركة...
+  sources:
+  - GASTAT-editorial
+- id: MHR-C009
+  title: عنوان الشريحة الاستشارية خلاصة تنفيذية
+  judgement: style
+  scope: consulting
+  status: approved
+  description: في الشريحة التحليلية أو التنفيذية، اكتب عنوانا يلخص الرسالة الرئيسة للشريحة، ولو كان طويلا. يستثنى الغلاف والفهرس
+    وفواصل الأقسام.
+  examples:
+    review:
+    - أبرز التحديات
+    preferred:
+    - تتركز التحديات الرئيسة في تداخل المسؤوليات، وتعدد قنوات الخدمة، وضعف تكامل البيانات بين الأنظمة.
+    must_not_change:
+    - التوصيات
+  sources:
+  - internal-consulting
+- id: MHR-C010
+  title: استخدم التعليمات المباشرة في الواجهات
+  judgement: style
+  scope: digital
+  status: approved
+  description: في التعليمات الرقمية استخدم الأمر المباشر. لا تستخدم «يرجى» في النص المنشأ؛ استخدم «نأمل» إذا احتاج السياق
+    إلى طلب مهذب.
+  examples:
+    review:
+    - يرجى إدخال رقم الهوية
+    - يرجى موافاتنا بالوثائق المطلوبة
+    preferred:
+    - أدخل رقم الهوية
+    - نأمل موافاتنا بالوثائق المطلوبة
+    must_not_change:
+    - نأمل مراجعة الاتفاقية وإفادتنا بمرئياتكم
+  sources:
+  - internal-style
+  - DGA-digital
+- id: MHR-C011
+  title: رسالة الخطأ تشرح المشكلة والإجراء المأمون
+  judgement: prefer
+  scope: digital
+  status: approved
+  description: وضح المشكلة وما يستطيع المستخدم فعله إذا كانت المعلومة معروفة. لا تخترع سببا أو حدا أو شرطا غير موجود.
+  examples:
+    review:
+    - إدخال غير صالح
+    preferred:
+    - أدخل رقم هوية مكونا من 10 أرقام.
+    must_not_change:
+    - تعذر إرسال الطلب
+  sources:
+  - DGA-digital
+- id: MHR-C012
+  title: الحالة الفارغة تصف ما هو فارغ تحديدا
+  judgement: style
+  scope: digital
+  status: approved
+  description: استخدم جملة عربية مكتملة عندما تكون أوضح من الاختزال، ولا تخترع إجراء تاليا غير موجود.
+  examples:
+    review:
+    - لا طلبات متاحة
+    - لا نتائج متاحة
+    preferred:
+    - لا توجد طلبات حاليا.
+    - لا توجد نتائج تطابق بحثك.
+    must_not_change:
+    - لا توجد نتائج.
+  sources:
+  - internal-style
+- id: MHR-C013
+  title: اسم الزر يصف نتيجة الفعل قدر الإمكان
+  judgement: style
+  scope: digital
+  status: approved
+  description: فضل «إرسال الطلب» و«حفظ التغييرات» على الأزرار المبهمة عند الحاجة، مع إبقاء «التالي» و«السابق» و«إلغاء» عندما
+    تكون واضحة.
+  examples:
+    review:
+    - نعم
+    preferred:
+    - حذف الطلب
+    must_not_change:
+    - التالي
+    - إلغاء
+  sources:
+  - DGA-digital
+  - internal-style
+- id: MHR-C014
+  title: ميز بين حالة النظام وقدرة المستخدم وصلاحيته
+  judgement: guardrail
+  scope: digital
+  status: approved
+  description: لا تعامل «لا يوجد»، و«لا يمكنك»، و«ليس لديك صلاحية»، و«لا يمكن بعد الاعتماد» كمترادفات.
+  examples:
+    review:
+    - لا توجد إجراءات متاحة.
+    preferred:
+    - لا توجد إجراءات متاحة.
+    must_not_change:
+    - ليس لديك صلاحية لتنفيذ هذا الإجراء.
+  sources:
+  - internal-style
+- id: MHR-C015
+  title: استخدم العربية عند وجود مصطلح عربي مستقر
+  judgement: prefer
+  scope: terminology
+  status: approved
+  description: استخدم المقابل العربي المستقر في السياق المهني، ولا تترجم المصطلحات أو الأسماء بغير تحقق.
+  examples:
+    review:
+    - إدارة الـ Stakeholders
+    - مراجعة الـ Requirements
+    preferred:
+    - إدارة أصحاب المصلحة
+    - مراجعة المتطلبات
+    must_not_change:
+    - تشغيل Power BI
+  sources:
+  - KSAA-policy
+- id: MHR-C016
+  title: لا تترجم الأسماء الرسمية من عندك
+  judgement: guardrail
+  scope: terminology
+  status: approved
+  description: حافظ على أسماء الجهات والمنتجات والشهادات والأطر والعلامات، واستخدم الاسم العربي الرسمي فقط إذا كان موثقا.
+  examples:
+    review:
+    - Microsoft Teams
+    preferred:
+    - Microsoft Teams
+    must_not_change:
+    - Baldrige Excellence Framework
+  sources:
+  - internal-accuracy
+- id: MHR-C017
+  title: مفهوم واحد = مصطلح واحد
+  judgement: prefer
+  scope: terminology
+  status: approved
+  description: لا تنوع المصطلحات لمجرد تجنب التكرار. وحد المصطلح إذا كان يشير إلى المفهوم نفسه.
+  examples:
+    review:
+    - المستفيد... المستخدم... العميل
+    preferred:
+    - المستفيد... المستفيد... المستفيد
+    must_not_change:
+    - المستخدم يدير حسابه، والمستفيد يتلقى الخدمة.
+  sources:
+  - KSAA-policy
+  - internal-style
+- id: MHR-C018
+  title: عرّف الاختصار بحسب الجمهور
+  judgement: review
+  scope: terminology
+  status: approved
+  description: عرّف الاختصار في أول ظهور إذا كان الجمهور قد لا يعرفه، ولا تثقل النص التقني بشرح الاختصارات المعروفة كل مرة.
+  examples:
+    review:
+    - يجب تحقيق SLA بنسبة 99.9%
+    preferred:
+    - يجب تحقيق مستوى الخدمة المحدد في اتفاقية مستوى الخدمة (SLA) بنسبة 99.9%.
+    must_not_change:
+    - REST API
+    - JSON
+  sources:
+  - internal-style
+- id: MHR-C019
+  title: راجع الهجين العربي الإنجليزي غير الضروري
+  judgement: review
+  scope: terminology
+  status: approved
+  description: إذا كان المزج نتيجة عادة لا حاجة تقنية، اقترح العربية الطبيعية. لا تعد أسماء المنتجات والمصطلحات التقنية عيبا
+    في ذاتها.
+  examples:
+    review:
+    - نراجع الـ Requirements قبل الـ Meeting
+    preferred:
+    - نراجع المتطلبات قبل الاجتماع.
+    must_not_change:
+    - أرسل طلبا إلى REST API.
+  sources:
+  - KSAA-policy
+  - internal-style
+- id: MHR-C020
+  title: استخدم ترقيمًا مهنيًا متسقًا
+  judgement: prefer
+  scope: punctuation
+  status: approved
+  description: لا تترك مسافة قبل علامة الترقيم، ولا تكدس علامات الاستفهام والتعجب. حافظ على علامات النصوص التقنية والروابط.
+  examples:
+    review:
+    - اكتمل المشروع ، وبدأ التشغيل .
+    - هل تم الإرسال؟؟؟
+    preferred:
+    - اكتمل المشروع، وبدأ التشغيل.
+    - هل تم الإرسال؟
+    must_not_change:
+    - https://example.com
+    - '10.5'
+  sources:
+  - GASTAT-editorial
+- id: MHR-C021
+  title: لا تبق بنية السؤال داخل الجملة الخبرية دون حاجة
+  judgement: prefer
+  scope: style
+  status: approved
+  description: إذا لم تكن الجملة سؤالا موجها، أعد بناء الاستفهام المضمن إلى تركيب خبري طبيعي عندما يكون ذلك أوضح.
+  examples:
+    review:
+    - نحتاج إلى معرفة متى يبدأ المشروع.
+    - لا أعلم هل اعتمدت اللجنة التقرير.
+    preferred:
+    - نحتاج إلى معرفة وقت بدء المشروع.
+    - لا أعلم شيئا عن اعتماد اللجنة للتقرير.
+    must_not_change:
+    - متى يبدأ المشروع؟
+  sources:
+  - internal-style
+- id: MHR-C022
+  title: التشكيل ليس ممنوعا ولا مطلوبا تلقائيا
+  judgement: style
+  scope: general
+  status: approved
+  description: لا تضف تشكيلًا كاملا تلقائيا في النص المهني، واستخدم التشكيل الجزئي لدفع اللبس، ولا تحذف تشكيل الكاتب بلا سبب.
+  examples:
+    review:
+    - تهدف المُبادرة إلى تَطوير الخِدمات
+    preferred:
+    - تهدف المبادرة إلى تطوير الخدمات.
+    must_not_change:
+    - السِّياسة الوطنية
+  sources:
+  - internal-style
+- id: MHR-C023
+  title: حافظ على نمط الأرقام في الوثيقة
+  judgement: guardrail
+  scope: general
+  status: approved
+  description: لا تغير نمط الأرقام آليا. إذا اختلط 123 و١٢٣، نبه إلى عدم الاتساق وحدد النمط بحسب سياسة الوثيقة إن كانت معروفة.
+  examples:
+    review:
+    - شملت الدراسة 25 جهة و١٢٠ مستفيدا
+    preferred:
+    - نمط الأرقام غير متسق؛ وحّده بحسب سياسة الوثيقة.
+    must_not_change:
+    - القرار رقم ١٢٣
+  sources:
+  - GASTAT-numbers
+- id: MHR-C024
+  title: عالج تعقيد الجملة لا طولها المجرد
+  judgement: review
+  scope: style
+  status: approved
+  description: لا تضع حدا آليا لعدد الكلمات. قسم أو أعد بناء الجملة إذا تشابكت العلاقات وصعب تتبعها.
+  examples:
+    review:
+    - المنصة التي طورتها الجهة والتي تهدف إلى توحيد الخدمات والتي ترتبط بعدد من الأنظمة...
+    preferred:
+    - طورت الجهة المنصة لتوحيد الخدمات، وربطتها بعدد من الأنظمة.
+    must_not_change:
+    - أظهرت الدراسة أن توحيد الإجراءات وخفض عدد الموافقات ساهما في تقليص الزمن بنسبة 30%.
+  sources:
+  - GASTAT-editorial
+- id: MHR-C025
+  title: لا تغير الحقائق والأرقام
+  judgement: guardrail
+  scope: general
+  status: approved
+  description: يحظر تقريب أو تبديل رقم أو تاريخ أو نسبة أو نطاق أو اسم جهة أثناء التحرير.
+  examples:
+    review:
+    - شملت الدراسة 27 جهة، وانخفض الزمن 18%.
+    preferred:
+    - شملت الدراسة 27 جهة، وانخفض الزمن 18%.
+    must_not_change:
+    - بدأ المشروع في الربع الثالث.
+  sources:
+  - GASTAT-editorial
+- id: MHR-C026
+  title: حافظ على درجة اليقين
+  judgement: guardrail
+  scope: general
+  status: approved
+  description: لا تحول «قد» و«يشير» و«متوقع» و«يقدر» إلى حقيقة قطعية، ولا تضعف حقيقة قطعية بلا سبب.
+  examples:
+    review:
+    - قد يؤدي الحل إلى خفض التكلفة.
+    preferred:
+    - قد يؤدي الحل إلى خفض التكلفة.
+    must_not_change:
+    - اعتمد المجلس القرار.
+  sources:
+  - GASTAT-editorial
+- id: MHR-C027
+  title: لا تخترع علاقة سببية
+  judgement: guardrail
+  scope: general
+  status: approved
+  description: لا تحول اقتران حدثين إلى سببية، ولا تضف «بسبب» أو «أدى إلى» إذا لم يذكر الأصل العلاقة.
+  examples:
+    review:
+    - ارتفع عدد المستخدمين 20%، وانخفض زمن المعالجة 15%.
+    preferred:
+    - ارتفع عدد المستخدمين 20%، وانخفض زمن المعالجة 15%.
+    must_not_change: []
+  sources:
+  - internal-accuracy
+- id: MHR-C028
+  title: راجع سلاسل الأسماء الموصولة
+  judgement: review
+  scope: style
+  status: approved
+  description: راجع توالي «الذي/التي» إذا أثقل الجملة، ولا تغير جملة موصولة طبيعية وواضحة.
+  examples:
+    review:
+    - المنصة التي طورتها الجهة والتي تهدف إلى توحيد الخدمات والتي ترتبط بعدد من الأنظمة
+    preferred:
+    - طورت الجهة المنصة لتوحيد الخدمات، وربطتها بعدد من الأنظمة.
+    must_not_change:
+    - النظام الذي اعتمده المجلس سيبدأ تشغيله في أكتوبر.
+  sources:
+  - internal-style
+- id: MHR-C029
+  title: لا تفك الضمير إلا عند لبس حقيقي
+  judgement: guardrail
+  scope: style
+  status: approved
+  description: حافظ على الضمير إذا كان مرجعه واضحا. إذا احتمل أكثر من مرجع، نبه ولا تخمن.
+  examples:
+    review:
+    - أخبرت سارة نورة أن طلبها اعتمد.
+    preferred:
+    - راجع مرجع الضمير «ها»؛ يحتمل سارة أو نورة.
+    must_not_change:
+    - أرسلت الإدارة التقرير إلى اللجنة بعد مراجعته.
+  sources:
+  - internal-style
+- id: MHR-C030
+  title: راجع تكرار الفكرة لا تكرار الكلمة
+  judgement: review
+  scope: style
+  status: approved
+  description: احذف التكرار الدلالي الذي لا يضيف معنى، ولا تستبدل الكلمات المتكررة بمترادفات لمجرد التنويع.
+  examples:
+    review:
+    - رفع كفاءة العمليات وتحسين أدائها، بما يسهم في زيادة كفاءة العمل وتحسين مستوى الأداء
+    preferred:
+    - رفع كفاءة العمليات وتحسين أدائها.
+    must_not_change:
+    - انخفضت التكلفة، لكن انخفاضها لم ينعكس على السعر.
+  sources:
+  - GASTAT-editorial
+- id: MHR-C031
+  title: فك النفي المركب إذا كان البديل أوضح ولا يغير المعنى
+  judgement: review
+  scope: style
+  status: approved
+  description: اقترح الإثبات المباشر عندما يحافظ على المعنى، ولا تحول «غير واجب» إلى «ممنوع».
+  examples:
+    review:
+    - لا يمكن عدم إرفاق المستند.
+    preferred:
+    - يجب إرفاق المستند.
+    must_not_change:
+    - لا يلزم تقديم المستند.
+  sources:
+  - internal-style
+- id: MHR-C032
+  title: قدم المعلومة الأساسية قبل ملابساتها
+  judgement: prefer
+  scope: style
+  status: approved
+  description: قدم الحدث أو القرار أو النتيجة أولا إذا لم تكن المقدمة ضرورية قانونيا أو لفهم السياق.
+  examples:
+    review:
+    - في ضوء نتائج الدراسة وملاحظات الإدارات، فقد قررت اللجنة اعتماد النموذج.
+    preferred:
+    - قررت اللجنة اعتماد النموذج، بناء على نتائج الدراسة وملاحظات الإدارات.
+    must_not_change:
+    - 'بناء على قرار مجلس الإدارة رقم 15، تعتمد الشركة السياسة الآتية:'
+  sources:
+  - GASTAT-editorial
+- id: MHR-C033
+  title: استخدم علامات الاقتباس والمعلومات الاعتراضية بأمان
+  judgement: guardrail
+  scope: punctuation
+  status: approved
+  description: لا تنشئ اقتباسا مباشرا من إعادة صياغة، ولا تدع وجود حذف بالنقاط دون تحقق. استخدم الأقواس للمعلومة التفسيرية
+    دون تكديس.
+  examples:
+    review:
+    - أوضح المدير أن التشغيل سيبدأ في أكتوبر.
+    preferred:
+    - أوضح المدير أن التشغيل سيبدأ في أكتوبر.
+    must_not_change:
+    - 'قال المدير: «سنبدأ التنفيذ غدا».'
+  sources:
+  - GASTAT-editorial
+- id: MHR-C034
+  title: استخدم النقطتين والفاصلة المنقوطة بحسب الوظيفة
+  judgement: prefer
+  scope: punctuation
+  status: approved
+  description: استخدم النقطتين قبل التفصيل الواضح أو القول، والفاصلة المنقوطة عند علاقة سببية أو تعليلية بين جملتين مستقلتين
+    نسبيا. لا تطبق ميكانيكيا.
+  examples:
+    review:
+    - تتكون المنهجية من ثلاث مراحل، التخطيط، والتنفيذ، والمتابعة.
+    preferred:
+    - 'تتكون المنهجية من ثلاث مراحل: التخطيط، والتنفيذ، والمتابعة.'
+    must_not_change:
+    - اجتمع الفريق صباحا، وناقش خطة التنفيذ.
+  sources:
+  - GASTAT-editorial
+- id: MHR-C035
+  title: لا تفرض وجها واحدا إذا تعددت الأوجه الصحيحة
+  judgement: guardrail
+  scope: general
+  status: approved
+  description: إذا أثبت المرجع صحة أكثر من وجه، فاحتفظ بدرجة الحكم. «أفصح» أو «أجود» لا تعني أن الوجه الآخر خطأ.
+  examples:
+    review:
+    - شئون
+    - يقرؤون
+    - أن لا
+    preferred:
+    - تترك إذا كانت صحيحة في المرجع؛ ويمكن تسجيل وجه مفضل دون تصنيف الآخر خطأ.
+    must_not_change:
+    - شؤون
+    - يقرأون
+    - ألا
+  sources:
+  - KSAA-consultations
+  - internal-policy

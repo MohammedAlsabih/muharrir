@@ -1,0 +1,50 @@
+version: 0.2.0
+tests:
+- id: N001
+  input: كان ثابتًا كالجبل.
+  reason: الكاف للتشبيه الحقيقي.
+  related_rule: MHR-C002
+- id: N002
+  input: مر الضوء من خلال النافذة.
+  reason: «من خلال» تؤدي معنى حقيقيا.
+  related_rule: MHR-C005
+- id: N003
+  input: أرسلت الإدارة التقرير إلى اللجنة بعد مراجعته.
+  reason: مرجع الضمير واضح ولا حاجة إلى تكرار الاسم.
+  related_rule: MHR-C029
+- id: N004
+  input: النظام الذي اعتمده المجلس سيبدأ تشغيله في أكتوبر.
+  reason: الجملة الموصولة طبيعية وغير مثقلة.
+  related_rule: MHR-C028
+- id: N005
+  input: لا يلزم تقديم المستند.
+  reason: تعني أن التقديم غير واجب، ولا يجوز تحويلها إلى أمر أو منع.
+  related_rule: MHR-C031
+- id: N006
+  input: اعتمد المجلس القرار.
+  reason: لا يجوز خفض درجة اليقين.
+  related_rule: MHR-C026
+- id: N007
+  input: قد يؤدي الحل إلى خفض التكلفة.
+  reason: لا يجوز تحويل الاحتمال إلى حقيقة.
+  related_rule: MHR-C026
+- id: N008
+  input: يستخدم الفريق Microsoft Teams للاجتماعات.
+  reason: اسم منتج رسمي ولا يترجم.
+  related_rule: MHR-C016
+- id: N009
+  input: أرسل المطور طلبا إلى REST API.
+  reason: الإنجليزية التقنية ليست عيبا في ذاتها.
+  related_rule: MHR-C019
+- id: N010
+  input: السِّياسة الوطنية للُّغة العربية
+  reason: لا يحذف التشكيل المقصود تلقائيا.
+  related_rule: MHR-C022
+- id: N011
+  input: بدأ المشروع في الربع الثالث.
+  reason: لا يستنتج شهر البدء.
+  related_rule: MHR-C025
+- id: N012
+  input: ارتفع عدد المستخدمين 20%، وانخفض زمن المعالجة 15%.
+  reason: لا ينشئ علاقة سببية.
+  related_rule: MHR-C027

@@ -1,0 +1,38 @@
+version: 0.2.0
+package: basic-proofreading
+loaded_by_default: false
+rationale: قواعد تدقيق لغوي أساسية تتقنها النماذج القوية غالبا؛ أبقيت خارج النواة لتقليل العبء.
+excluded_from_core:
+- legacy_id: MHR-042
+  topic: همزتا الوصل والقطع
+- legacy_id: MHR-043
+  topic: التاء المربوطة والهاء
+- legacy_id: MHR-044
+  topic: الألف المقصورة والياء
+- legacy_id: MHR-045
+  topic: الهمزة المتوسطة والمتطرفة
+- legacy_id: MHR-046
+  topic: ألف تنوين النصب
+- legacy_id: MHR-047
+  topic: المطابقة بين المسند والمسند إليه
+- legacy_id: MHR-048
+  topic: مطابقة الصفة للموصوف
+- legacy_id: MHR-049
+  topic: أحد / إحدى
+- legacy_id: MHR-051
+  topic: العدد والمعدود
+- legacy_id: MHR-051A
+  topic: العددان 1 و2
+- legacy_id: MHR-051B
+  topic: الأعداد 3 إلى 10
+- legacy_id: MHR-051C
+  topic: 11 و12
+- legacy_id: MHR-051D
+  topic: 13 إلى 19
+- legacy_id: MHR-051E
+  topic: ألفاظ العقود
+- legacy_id: MHR-051F
+  topic: الأعداد المعطوفة
+- legacy_id: MHR-051G
+  topic: مئة وألف ومليون وما في حكمها
+activation: حمّل هذه الحزمة فقط عند طلب تدقيق إملائي/نحوي تقليدي أو عند ظهور حاجة صريحة.
