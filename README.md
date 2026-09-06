@@ -1,25 +1,27 @@
-# Muharrir | محرر
+# محرر | Muharrir
 
 **محرر** محرك سعودي مفتوح المصدر لتحسين الكتابة والتحرير بالعربية الفصحى المعاصرة، مع تركيز خاص على العربية المهنية في العروض الاستشارية، والتقارير، والتطبيقات، والمنصات الرقمية.
 
-> الإصدار الحالي: `0.2.0`
+> الإصدار الحالي: `v0.2.0`
 
-## Muharrir v0.2.0
+## محرر v0.2.0
 
-**Muharrir v0.2.0 is the first public release of Muharrir. It establishes the project's core editorial model for reviewing contemporary professional Arabic, with a focus on natural expression, meaning preservation, translation interference, terminology consistency, digital content, and consulting writing.**
+يمثل `v0.2.0` أول إصدار عام من **محرر**، ويضع الأساس لمنهجية تحرير ومراجعة العربية المهنية المعاصرة، مع التركيز على طبيعية الصياغة، وحماية المعنى، ومعالجة أثر الترجمة، واتساق المصطلحات، وجودة المحتوى الرقمي والكتابة الاستشارية.
 
-- **35 core editorial rules** focused on high-value professional Arabic review.
-- Three operating modes: **review**, **suggest**, and **rewrite**, with `review` as the default.
-- Strong safeguards for preserving **meaning, facts, figures, names, and uncertainty**.
-- Detection of **literal translation and English-shaped Arabic structures** without mechanically banning valid Arabic constructions.
-- Dedicated guidance for **consulting decks and executive writing**.
-- Dedicated guidance for **digital products and UI content**, including buttons, instructions, empty states, and error messages.
-- **Terminology consistency** rules that distinguish official names and technical terms from ordinary prose.
-- **Anti-overcorrection safeguards** so already-good Arabic is not changed merely because another wording is possible.
-- Separation of **basic proofreading** from the core editorial engine through the optional `basic-proofreading` package.
-- A **human-reviewed testing model**, including approved examples and `must-not-change` cases.
-- Saudi-oriented source policy, prioritizing relevant authoritative Saudi Arabic and government references.
-- Portable `SKILL.md` structure designed for use with **Codex and Claude-compatible skill workflows**.
+### مميزات الإصدار الأول
+
+- **35 قاعدة تحريرية أساسية** تركز على أكثر جوانب مراجعة العربية المهنية أثرا.
+- ثلاثة أوضاع للعمل: `review` للمراجعة، و`suggest` للاقتراح، و`rewrite` لإعادة الصياغة، مع اعتماد `review` وضعا افتراضيا.
+- حماية المعنى والحقائق والأرقام والأسماء ودرجة اليقين من التغيير أثناء التحرير.
+- اكتشاف أثر **الترجمة الحرفية والتراكيب المتأثرة بالإنجليزية** دون منع التراكيب العربية الصحيحة آليا.
+- إرشادات متخصصة **للعروض الاستشارية والكتابة التنفيذية**، بما في ذلك صياغة عناوين الشرائح والرسائل التنفيذية.
+- إرشادات متخصصة **للمحتوى الرقمي وواجهات المستخدم**، تشمل الأزرار، والتعليمات، والحالات الفارغة، ورسائل الخطأ.
+- قواعد لاتساق **المصطلحات** مع الحفاظ على الأسماء الرسمية والمصطلحات التقنية وعدم تنويعها لمجرد التنويع الأسلوبي.
+- ضوابط للحد من **التصحيح المفرط**، بحيث لا يغير محرر النص العربي الجيد لمجرد وجود صياغة بديلة.
+- فصل قواعد **التدقيق اللغوي الأساسي** عن المحرك التحريري الأساسي، وإتاحتها ضمن حزمة `basic-proofreading` الاختيارية.
+- منهجية اختبار تعتمد على **أمثلة راجعها الإنسان**، إلى جانب حالات `must-not-change` التي يجب ألا يتدخل فيها محرر.
+- سياسة مصادر تراعي السياق السعودي وتعطي الأولوية للمراجع العربية السعودية الرسمية والمتخصصة ذات الصلة.
+- بنية محمولة تعتمد على `SKILL.md` ومهيأة للعمل في البيئات التي تدعم المهارات، بما في ذلك **Codex وClaude**.
 
 ## المبدأ
 
