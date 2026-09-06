@@ -4,19 +4,22 @@
 
 > الإصدار الحالي: `0.2.0`
 
-## ما الذي تغير في 0.2.0؟
+## Muharrir v0.2.0
 
-أعيد تعريف النواة لتكون خفيفة ومركزة على المشكلات التي تستحق تدخل محرر فعلا:
+**Muharrir v0.2.0 is the first public release of Muharrir. It establishes the project's core editorial model for reviewing contemporary professional Arabic, with a focus on natural expression, meaning preservation, translation interference, terminology consistency, digital content, and consulting writing.**
 
-- أثر الترجمة الحرفية.
-- الصياغة غير المستساغة في العربية المهنية المعاصرة.
-- الحشو والتراكيب الآلية.
-- المحتوى الرقمي والعروض الاستشارية.
-- حماية المعنى والحقائق ودرجة اليقين.
-- ثبات المصطلحات والأسماء الرسمية.
-- منع الإفراط في التصحيح.
-
-ونقلت قواعد التدقيق اللغوي الأساسية، مثل الهمزات والعدد والمعدود والمطابقة النحوية البديهية، إلى حزمة اختيارية مستقلة؛ لأن النماذج القوية تتعامل معها غالبا بكفاءة، وتحميل النواة بها يزيد العبء دون قيمة متناسبة.
+- **35 core editorial rules** focused on high-value professional Arabic review.
+- Three operating modes: **review**, **suggest**, and **rewrite**, with `review` as the default.
+- Strong safeguards for preserving **meaning, facts, figures, names, and uncertainty**.
+- Detection of **literal translation and English-shaped Arabic structures** without mechanically banning valid Arabic constructions.
+- Dedicated guidance for **consulting decks and executive writing**.
+- Dedicated guidance for **digital products and UI content**, including buttons, instructions, empty states, and error messages.
+- **Terminology consistency** rules that distinguish official names and technical terms from ordinary prose.
+- **Anti-overcorrection safeguards** so already-good Arabic is not changed merely because another wording is possible.
+- Separation of **basic proofreading** from the core editorial engine through the optional `basic-proofreading` package.
+- A **human-reviewed testing model**, including approved examples and `must-not-change` cases.
+- Saudi-oriented source policy, prioritizing relevant authoritative Saudi Arabic and government references.
+- Portable `SKILL.md` structure designed for use with **Codex and Claude-compatible skill workflows**.
 
 ## المبدأ
 
