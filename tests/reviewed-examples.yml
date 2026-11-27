@@ -1,4 +1,4 @@
-version: 0.2.0
+version: 0.3.0
 tests:
 - id: T001
   rule: MHR-C002
@@ -76,3 +76,98 @@ tests:
   mode: rewrite
   expected_action: preserve_facts_exactly
   approved: true
+- id: T013
+  rule: MHR-C036
+  related_rules:
+  - MHR-C037
+  input: لا بيع ولا إعلان ولا معارض قبل ترخيص المشروع
+  context: شريحة نظامية
+  mode: review
+  expected_notes:
+  - rule: MHR-C036
+    judgement: prefer
+    suggestion: يُشترط ترخيص المشروع قبل البيع أو الإعلان أو العرض في المعارض
+  - rule: MHR-C037
+    judgement: review
+    note: «معارض» قد تُقرأ «مُعارِض» بعد حذف ما يوضحها.
+  approved: true
+- id: T014
+  rule: MHR-C036
+  input: لا صرف من الحساب إلا بوثيقة يوقعها المدير المالي
+  context: لائحة داخلية
+  mode: suggest
+  expected: لا يُصرف من الحساب إلا بوثيقة يوقعها المدير المالي
+  must_preserve: الحصر في «لا… إلا»
+  approved: true
+- id: T015
+  rule: MHR-C038
+  input: نتيجة الأداء مرهونة بظروف قياسها
+  context: عنوان مبدأ في موقع تعليمي
+  mode: suggest
+  expected: نتائج الأداء التي حققها غيرك قد لا تتكرر في منتجك
+  approved: true
+- id: T016
+  rule: MHR-C039
+  input: الجودة ناتج النظام كله، لا النموذج وحده
+  context: عنوان مبدأ
+  mode: suggest
+  expected: الجودة ناتج المنظومة كاملة وليست محدودة بالنموذج
+  approved: true
+- id: T017
+  rule: MHR-C046
+  input: إصدار كاسر للتوافق
+  context: نص تقني
+  mode: suggest
+  expected: إصدار غير متوافق مع ما قبله
+  approved: true
+- id: T018
+  rule: MHR-C041
+  input: نتائج الأداء المحققة لدى الآخرين
+  context: عنوان
+  mode: suggest
+  expected: نتائج الأداء التي حققها غيرك
+  approved: true
+- id: T019
+  rule: MHR-C042
+  input: لماذا فشلت هذه المهمة؟ أي الآثار غير كافية.
+  context: قائمة تحقق
+  mode: suggest
+  expected: لماذا فشلت هذه المهمة؟ وهذا يعني أن الآثار غير كافية.
+  approved: true
+- id: T020
+  rule: MHR-C040
+  input: هذه نقاط بداية، وليس قواعد.
+  context: ملاحظة
+  mode: suggest
+  expected: هذه نقاط بداية، وليست قواعد.
+  approved: true
+- id: T021
+  rule: MHR-C036
+  input: (اكتب ضابطًا لصرف المبالغ من حساب المشروع)
+  context: لائحة
+  mode: write
+  expected_action: no_slogan_negation
+  expected_note: ناتج لا يحتوي صيغة «لا… ولا…» الشعارية، ولا يستخدم «لا… إلا» في غير موضعها.
+  approved: true
+- id: T022
+  rule: MHR-C043
+  input: تحدد تعليمات النظام سلوك النموذج، ويقلل التخزين المؤقت للتعليمات زمن الاستجابة.
+  context: نص تقني يستخدم «التعليمات» بمعنى system prompt
+  mode: review
+  expected_action: flag_term_collision
+  expected_note: «التعليمات» تعني system prompt، فتسمية prompt caching «التخزين المؤقت للتعليمات» توهم أنه تخزين لتعليمات النظام وحدها.
+  approved: false
+- id: T023
+  rule: MHR-C044
+  input: (غُيّر عنوان القسم من «نتيجة الأداء مرهونة بظروف قياسها» إلى «نتائج الأداء التي حققها غيرك قد لا تتكرر في منتجك»، وبقي في النص «انظر قسم نتيجة الأداء مرهونة بظروف قياسها»)
+  context: موقع تعليمي
+  mode: rewrite
+  expected: انظر قسم «نتائج الأداء التي حققها غيرك قد لا تتكرر في منتجك».
+  approved: false
+- id: T024
+  rule: MHR-C045
+  input: نوزع المهام بحسب الأولوية، ونرتبها حسب الموعد.
+  context: دليل إجرائي يستخدم «بحسب» في بقية المواضع
+  mode: suggest
+  expected: نوزع المهام بحسب الأولوية، ونرتبها بحسب الموعد.
+  approved: false
